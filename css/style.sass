@@ -1,0 +1,744 @@
+$main-color: #4E9525
+$main-hover: #306611
+$secondary-color: #FBD341
+$white-text: #ffffff
+$dark-text: #333333
+$dark-bg: #252525
+$dirty-white: #cecdcdcc
+$light-text: #6b6a6a
+$light-bg: #F8F9FA
+
+@mixin inspect()
+    border: 1px solid red
+@mixin transition()
+    transition: all 0.2s linear
+@mixin perfectCenter()
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+@mixin txtShadow()
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8)
+@mixin boxShadow()
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.25)
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap')
+
+*, *:before, *:after
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+*
+    padding: 0
+    margin: 0
+body
+    font-family: 'Poppins', sans-serif
+
+.loader
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 100
+    background: $light-bg
+    @include perfectCenter()
+    .loading
+        width: 50px
+        height: 50px
+        // background: $main-color
+        // border-radius: 50%
+        &::after
+            content: ''
+            display: block
+            width: 40px
+            height: 40px
+            border-radius: 50%
+            border: 6px solid $main-color
+            border-color: $main-color transparent $main-color transparent
+            animation: animated 1s linear forwards infinite
+
+.hidden
+    opacity: 0
+    visibility: hidden
+
+@keyframes animated
+    0%
+        transform: rotate(0)
+    100%
+        transform: rotate(360deg)
+
+a
+    text-decoration: none
+    display: inline-block
+ul
+    list-style: none
+img
+    max-width: 100%
+    height: auto
+    display: block
+h2
+    font-size: 2rem
+    color: $dark-bg
+h5
+    font-size: 1.2rem
+    color: $main-color
+
+.container
+    width: 100%
+    padding-right: 15px
+    padding-left: 15px
+    // margin-right: auto
+    // margin-left: auto
+    margin: 5rem auto
+
+.owl-dot.active span
+    background: $main-color !important
+
+.navigation
+    margin: 0 auto
+    .nav
+        margin: 0
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        align-items: center
+        padding: 2rem 0 1rem
+        &>*
+            order: 5
+        &-logo
+            order: 1
+            justify-content: center
+            align-items: center
+            a
+                color: $dark-bg
+                font-size: 2.2rem
+                font-weight: bold
+                span
+                    color: $main-color
+
+        &-search
+            order: 2
+            form
+                height: 50px
+                display: flex
+                align-items: center
+                border-radius: 40px
+                overflow: hidden
+                background: $dirty-white
+                &>*
+                    outline: none
+                    border: none
+                    height: 50px
+                input
+                    background: transparent
+                    height: 50px
+                    width: 100%
+                    padding-left: 15px
+                    color: $dark-text
+                    width: calc(100% - 50px)
+                    font-size: 0.9rem
+                    &::placeholder
+                        color: $dark-text
+                button
+                    background: $main-color
+                    color: $white-text
+                    border-radius: 50%
+                    width: 50px
+                    cursor: pointer
+                    @include transition()
+                    &:hover
+                        background: $main-hover
+
+        &-hamburger
+            overflow: hidden
+            order: 3
+            cursor: pointer
+            color: lighten($dark-bg, 20% )
+            font-size: 1.3rem
+            &:hover
+                color: $dark-bg
+            @include transition()
+
+.main-menu
+    order: 4
+    display: flex
+    width: 100%
+    // background: $main-color   
+    margin-top: 1rem
+    .menu
+        width: 100%
+        // text-transform: uppercase
+        font-size: 1.3rem
+        max-height: 0
+        overflow: hidden
+        @include transition()
+        li
+            padding: 0.5rem 0
+            a
+                width: 100%
+                position: relative
+                color: $dark-text
+                @include transition()
+                &::before
+                    content: ''
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    background: $dirty-white
+                    width: 100%
+                    height: 0.5px
+                    @include transition()
+                &::after
+                    content: ''
+                    position: absolute
+                    transition: all 0.2s linear
+                    bottom: 0
+                    left: 0
+                    background: $light-text
+                    width: 0
+                    height: 3px
+                &:hover::after, &:hover::before
+                    width: 100%
+                    background: $secondary-color
+
+.hero
+    width: 100%
+    min-height: 80vh
+    background: url('../images/bg_1.jpg') no-repeat center /cover
+    display: flex
+    flex-direction: column
+    align-items: start
+    justify-content: center
+    position: relative
+    &::after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(0,0,0,0.3)
+
+    .container
+        z-index: 5
+        &>*
+            margin: 0.5rem 0
+        h5
+            text-transform: uppercase
+            color: $secondary-color
+            font-size: 1.2rem
+            @include txtShadow()
+
+        h1
+            font-size: 2.4rem
+            color: $white-text
+            @include txtShadow()
+        p
+            color: $dirty-white
+            font-size: 1.1rem
+            @include txtShadow()
+        a
+            background: $main-color
+            color: $white-text
+            padding: 10px 15px
+            border-radius: 5px
+            @include transition()
+            &:hover
+                background: $main-hover
+.cards
+    display: flex
+    flex-direction: column
+    // margin-top: 2rem
+    // margin-bottom: 2rem
+    &>*
+        margin: 1rem 0
+    &-quoete
+        &>*
+            margin: 0.5rem 0
+        p
+            color: $light-text
+            font-size: 1.1rem
+        a
+            color: $white-text
+            background: $main-color
+            padding: 10px 15px
+            border-radius: 5px
+            @include transition()
+
+            &:hover
+                background: $main-hover
+    &-boxes
+        display: flex
+        flex-direction: column
+        text-align: center
+        .box
+            margin: 1rem 0
+            padding: 2rem
+            position: relative
+            @include boxShadow()
+
+            &>*
+                margin: 0.5rem 0
+            .icon
+                margin: auto
+                color: $main-color
+                background: $dirty-white
+                width: 100px
+                height: 100px
+                border-radius: 50%
+                @include perfectCenter()
+                @include transition()
+            h5
+                font-size: 1.1rem
+                color: $dark-text
+            p
+                color: $light-text
+            a
+                position: absolute
+                left: 50%
+                bottom: -50px
+                transform: translateX(-50%)
+                margin: auto
+                width: 50px
+                height: 50px
+                color: $white-text
+                background: $main-color
+                border-radius: 50%
+                opacity: 0
+                @include transition()
+                @include perfectCenter()
+                &:hover
+                    background: $main-hover
+            &:hover
+                .icon
+                    color: $secondary-color
+                    background: $main-color
+                a
+                    bottom: -16px
+                    opacity: 1
+
+.welcome
+    display: flex
+    flex-direction: column
+    &>*
+        margin: 1rem 0
+    &-video
+        width: 100%
+        height: 400px
+        background: url(../images/image_1.jpg) no-repeat center/cover
+        @include perfectCenter()
+        a
+            color: $white-text
+            background: $main-hover
+            width: 80px
+            height: 80px
+            margin: auto
+            border-radius: 50%
+            animation: vibrate 2s infinite
+            @include perfectCenter()
+            @include transition()
+            &:hover
+                background: $main-color
+    &-text
+        p
+            color: $dark-text
+        .choices
+            display: flex
+            flex-direction: column
+
+            a
+                display: flex
+                justify-content: space-between
+                align-items: center
+                padding: 18px
+                margin: 0.5rem 0
+                font-size: 1.1rem
+                border-radius: 5px
+                @include transition()
+                @include boxShadow()
+                span
+                    color: $white-text
+                    background: $main-color
+                    width: 50px
+                    height: 50px
+                    border-radius: 50%
+                    @include transition()
+                    @include perfectCenter()
+                &:hover
+                    background: $main-color
+                    p
+                        color: $white-text
+                    span
+                        background: $secondary-color
+                        color: $main-color
+
+.tips
+    text-align: center
+    &-cards
+        .item
+            width: 230px
+            img
+                height: 300px
+                object-fit: cover
+                border-radius: 5px
+
+.contact
+    background: $main-color
+    &-wrapper
+        display: flex
+        flex-direction: column
+        color: $white-text
+        padding: 3rem 1rem
+        &>*
+            margin: 1rem 0
+        &-text
+            h4
+                font-size: 2rem
+        &-call
+            a
+                font-size: 2.2rem
+                color: $secondary-color
+                @include transition()
+                &:hover
+                    color: lighten($secondary-color, 20%)
+
+.testemonial
+    &-items
+        .item
+            border: 1px solid rgba(0,0,0,0.05)
+            width: 230px
+            &>*
+                padding: 1rem
+            &-text
+                p
+                    color: $light-text
+                    text-align: center
+            &-img
+                display: flex
+                justify-content: space-around
+                align-items: center
+                .img
+                    img
+                        border: 1px solid rgba(0,0,0,0.05)
+                        width: 80px
+                        height: 80px
+                        border-radius: 50%
+                        object-fit: cover
+                .txt
+                    h5
+                        color: $dark-text
+                    p
+                        color: $main-color
+
+.blog
+    background: $light-bg
+    padding: 1rem 0
+    .blog-posts
+        &-heading
+            text-align: center
+            padding-bottom: 2rem
+        &-txt
+            .posts
+                display: flex
+                flex-direction: column
+                .post
+                    margin: 2rem 0
+                    &-img
+                        position: relative
+                        .img
+                            object-fit: cover
+                            img
+                                width: 100%
+                                height: 100%
+
+                        .post-date
+                            position: absolute
+                            bottom: 0
+                            left: 0
+                            display: inline-flex
+                            align-items: center
+                            background: $main-color
+                            color: $white-text
+                            padding: 0 12px
+                            margin-left: 2rem
+                            &::after
+                                content: ''
+                                position: absolute
+                                bottom: -10px
+                                left: 45px
+                                width: 20px
+                                height: 20px
+                                width: 0
+                                height: 0
+                                border-style: solid
+                                border-width: 10px 10px 0 10px
+                                border-color: $main-color transparent transparent transparent
+                            &>*
+                                padding: 5px
+                            .day
+                                font-size: 3rem
+                            .month-year
+                                font-size: 0.8rem
+                                color: $dirty-white
+                    &-description
+                        background: $white-text
+                        padding: 2rem
+                        &>*
+                            margin: 0.5rem 0
+                        h5
+                            color: $dark-text
+                        p
+                            color: $light-text
+                        a
+                            background: $main-color
+                            color: $white-text
+                            padding: 8px 15px
+                            border-radius: 5px
+
+.newsletter
+    background: $main-color
+    &-wrapper
+        margin-bottom: 0
+        display: flex
+        flex-direction: column
+        padding: 2rem 0
+        &-txt
+            h3
+                color: $white-text
+                font-size: 1.5rem
+                font-weight: normal
+        &-input
+            display: inline-flex
+            margin: 0
+            outline: none
+            input
+                padding: 10px
+                width: 100%
+                font-size: 1.2rem
+                border: none
+                border-top-left-radius: 5px
+                border-bottom-left-radius: 5px
+            button
+                outline: none
+                font-size: 1.2rem
+                background: $main-hover
+                color: $white-text
+                border: none
+                border-top-right-radius: 5px
+                border-bottom-right-radius: 5px
+                padding: 10px 15px
+                cursor: pointer
+                @include transition()
+                &:hover
+                    background: darken($main-hover, 10%)
+
+.footer
+    background: $dark-bg
+    padding: 2rem 0
+    color: $dirty-white
+    .container
+        margin-bottom: 1rem
+    &-boxes
+        margin-top: 0
+        display: grid
+        grid-template-columns: repeat(1fr)
+        align-items: baseline
+        &>*
+            padding: 1rem 0
+        h5
+            color: $white-text
+            margin-bottom: 1.5rem
+        a
+            color: $dirty-white
+            @include transition()
+            &:hover
+                color: $main-color
+        &-lawncare
+            &>*
+                // padding: 0.5rem 0
+            .logo
+                font-size: 2rem
+                font-weight: bold
+                color: $white-text
+
+                span
+                    color: $main-color
+            .social
+                a
+                    color: $white-text
+                    font-size: 1.5rem
+                    background: lighten($dark-bg, 5%)
+                    border-radius: 50%
+                    width: 50px
+                    height: 50px
+                    margin: 0 0.5rem
+                    display: inline-flex
+                    justify-content: center
+                    align-items: center
+                    @include transition()
+                    &:hover
+                        color: $main-color
+        &-services
+            li
+                padding: 0.5rem 0
+                a
+                    color: $white-text
+                    &::before
+                        content: '>'
+                        padding-right: 10px
+        &-contact
+            .info
+                display: flex
+            &>*
+                margin: .5rem 0
+                span
+                    color: $white-text
+                p
+                    margin-left: 1rem
+        &-hours
+            .hours
+                .secondary
+                    color: $secondary-color
+                p
+                    margin: 0.5rem 0
+    footer.container
+        margin: 1.5rem auto
+        text-align: center
+        span
+            color: red
+
+.owl-carousel
+    .owl-item
+        opacity: 0.5
+    .active
+        opacity: 1
+
+@keyframes vibrate
+    0%
+        box-shadow: 0 0 0 0 rgba(81, 170, 29, 0.4)
+    70%
+        box-shadow: 0 0 0 20px rgba(78, 149, 37, 0)
+    100%
+        box-shadow: 0 0 0 0 rgba(92, 224, 15, 0)
+
+@media (min-width: 576px)
+    .container
+        max-width: 540px
+
+@media (min-width: 768px)
+    .container
+        max-width: 720px
+    .cards
+        flex-direction: column-reverse
+        &-boxes
+            flex-direction: row
+            margin: 0
+            .box
+                margin: 0 1rem
+            // .box
+    .contact
+        &-wrapper
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+    .tips
+        text-align: center
+        &-cards
+            .item
+                width: auto
+    .testemonial
+        &-items
+            .item
+                width: auto
+                &-img
+                    justify-content: flex-start
+                    &>*
+                        padding: 0 1rem
+    .newsletter
+        &-wrapper
+            flex-direction: row
+            align-items: center
+            justify-content: space-evenly
+
+    .footer
+        &-boxes
+            grid-template-columns: repeat(2,1fr)
+            padding: 0
+            grid-gap: 1rem
+            // margin: 0
+
+@media (min-width: 992px)
+    .container
+        max-width: 960px
+    .nav
+        flex-wrap: nowrap
+        align-items: center
+        padding: 2rem 0
+        &-hamburger
+            display: none
+        &-search
+            order: 5
+        .main-menu
+            width: auto
+            flex-direction: row
+            background: transparent
+            margin-top: 0
+            order: 1
+            .menu
+                max-height: none
+                display: flex
+                li
+                    margin: 0 0.2rem
+                    a
+                        color: $dark-text
+                        &::before
+                            content: none
+    .cards
+        flex-direction: row-reverse
+        &-quoete
+            flex: 1
+            // margin-left: 1rem
+        &-boxes
+            flex: 3
+    .welcome
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        &>*
+            margin: 0 1rem
+        &-video
+            flex: 1
+            margin-right: 2rem
+            height: auto
+            align-self: stretch
+            position: relative
+            a
+                position: absolute
+                right: -30px
+        &-text
+            padding: 2rem 0
+            flex: 1
+    .blog
+        .blog-posts
+            &-txt
+                .posts
+                    flex-direction: row
+                    .post
+                        margin: 0 1rem
+                        &-img
+                            .img
+                                img
+                                    height: 250px
+                                    object-fit: cover
+    .footer
+        &-boxes
+            grid-template-columns: repeat(4,1fr)
+
+@media (min-width: 1200px)
+    .container
+        max-width: 1140px
+    .nav
+        .main-menu
+            .menu
+                li
+                    margin: 0 0.5rem

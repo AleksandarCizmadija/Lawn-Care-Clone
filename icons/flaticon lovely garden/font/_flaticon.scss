@@ -1,0 +1,139 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/06/2016 15:23
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-bee:before { content: "\f100"; }
+.flaticon-bird-house:before { content: "\f101"; }
+.flaticon-bonsai:before { content: "\f102"; }
+.flaticon-butterfly:before { content: "\f103"; }
+.flaticon-cactus:before { content: "\f104"; }
+.flaticon-cactus-1:before { content: "\f105"; }
+.flaticon-cart:before { content: "\f106"; }
+.flaticon-dungarees:before { content: "\f107"; }
+.flaticon-fence:before { content: "\f108"; }
+.flaticon-fertillizer:before { content: "\f109"; }
+.flaticon-flower:before { content: "\f10a"; }
+.flaticon-flower-1:before { content: "\f10b"; }
+.flaticon-flower-2:before { content: "\f10c"; }
+.flaticon-flower-in-a-pot:before { content: "\f10d"; }
+.flaticon-flowers-in-a-pot:before { content: "\f10e"; }
+.flaticon-flowers-in-a-pot-1:before { content: "\f10f"; }
+.flaticon-fountain:before { content: "\f110"; }
+.flaticon-gardening-boots:before { content: "\f111"; }
+.flaticon-gardening-gloves:before { content: "\f112"; }
+.flaticon-gardening-pail:before { content: "\f113"; }
+.flaticon-gardening-tool:before { content: "\f114"; }
+.flaticon-gardening-tool-1:before { content: "\f115"; }
+.flaticon-gardening-tool-2:before { content: "\f116"; }
+.flaticon-gnome:before { content: "\f117"; }
+.flaticon-grass:before { content: "\f118"; }
+.flaticon-hanging-plant:before { content: "\f119"; }
+.flaticon-hose:before { content: "\f11a"; }
+.flaticon-ladybug:before { content: "\f11b"; }
+.flaticon-lamppost:before { content: "\f11c"; }
+.flaticon-leaves:before { content: "\f11d"; }
+.flaticon-mower:before { content: "\f11e"; }
+.flaticon-pinwheel:before { content: "\f11f"; }
+.flaticon-plant:before { content: "\f120"; }
+.flaticon-plant-1:before { content: "\f121"; }
+.flaticon-plants:before { content: "\f122"; }
+.flaticon-pruner:before { content: "\f123"; }
+.flaticon-rake:before { content: "\f124"; }
+.flaticon-rake-1:before { content: "\f125"; }
+.flaticon-rake-2:before { content: "\f126"; }
+.flaticon-rose:before { content: "\f127"; }
+.flaticon-scissors:before { content: "\f128"; }
+.flaticon-seeds:before { content: "\f129"; }
+.flaticon-shed:before { content: "\f12a"; }
+.flaticon-shovel:before { content: "\f12b"; }
+.flaticon-shovel-1:before { content: "\f12c"; }
+.flaticon-tree:before { content: "\f12d"; }
+.flaticon-trowel:before { content: "\f12e"; }
+.flaticon-water-sprayer:before { content: "\f12f"; }
+.flaticon-watering-can:before { content: "\f130"; }
+.flaticon-watering-can-1:before { content: "\f131"; }
+    
+    $font-Flaticon-bee: "\f100";
+    $font-Flaticon-bird-house: "\f101";
+    $font-Flaticon-bonsai: "\f102";
+    $font-Flaticon-butterfly: "\f103";
+    $font-Flaticon-cactus: "\f104";
+    $font-Flaticon-cactus-1: "\f105";
+    $font-Flaticon-cart: "\f106";
+    $font-Flaticon-dungarees: "\f107";
+    $font-Flaticon-fence: "\f108";
+    $font-Flaticon-fertillizer: "\f109";
+    $font-Flaticon-flower: "\f10a";
+    $font-Flaticon-flower-1: "\f10b";
+    $font-Flaticon-flower-2: "\f10c";
+    $font-Flaticon-flower-in-a-pot: "\f10d";
+    $font-Flaticon-flowers-in-a-pot: "\f10e";
+    $font-Flaticon-flowers-in-a-pot-1: "\f10f";
+    $font-Flaticon-fountain: "\f110";
+    $font-Flaticon-gardening-boots: "\f111";
+    $font-Flaticon-gardening-gloves: "\f112";
+    $font-Flaticon-gardening-pail: "\f113";
+    $font-Flaticon-gardening-tool: "\f114";
+    $font-Flaticon-gardening-tool-1: "\f115";
+    $font-Flaticon-gardening-tool-2: "\f116";
+    $font-Flaticon-gnome: "\f117";
+    $font-Flaticon-grass: "\f118";
+    $font-Flaticon-hanging-plant: "\f119";
+    $font-Flaticon-hose: "\f11a";
+    $font-Flaticon-ladybug: "\f11b";
+    $font-Flaticon-lamppost: "\f11c";
+    $font-Flaticon-leaves: "\f11d";
+    $font-Flaticon-mower: "\f11e";
+    $font-Flaticon-pinwheel: "\f11f";
+    $font-Flaticon-plant: "\f120";
+    $font-Flaticon-plant-1: "\f121";
+    $font-Flaticon-plants: "\f122";
+    $font-Flaticon-pruner: "\f123";
+    $font-Flaticon-rake: "\f124";
+    $font-Flaticon-rake-1: "\f125";
+    $font-Flaticon-rake-2: "\f126";
+    $font-Flaticon-rose: "\f127";
+    $font-Flaticon-scissors: "\f128";
+    $font-Flaticon-seeds: "\f129";
+    $font-Flaticon-shed: "\f12a";
+    $font-Flaticon-shovel: "\f12b";
+    $font-Flaticon-shovel-1: "\f12c";
+    $font-Flaticon-tree: "\f12d";
+    $font-Flaticon-trowel: "\f12e";
+    $font-Flaticon-water-sprayer: "\f12f";
+    $font-Flaticon-watering-can: "\f130";
+    $font-Flaticon-watering-can-1: "\f131";
